@@ -5,12 +5,14 @@ import { Tsol } from "bitgo/dist/types/src/v2/coins";
 
 import { AddWalletOptions } from "@bitgo/sdk-core";
 
+// this script emulates some frontend using the BitGo SDK
+
 const bitgo = new BitGo({
-  // not actually used
+  // garbage that we ignore in favor of your real developer token, stored in your backend proxy machine
   accessToken: "unusedValue",
-  // change to prod for real thing
+  // change to prod/test as needed for whatever BitGo environment you want to use
   env: "test",
-  // in the real setup this would be <app.awesome.nike.backend>
+  // in the real setup this would be <my.awesome.custom.backend.urlroot>
   customRootURI: "localhost:3000",
 });
 
@@ -40,9 +42,9 @@ async function createHotMultiSigWalletSimple() {
     .coin("tbtc")
     .wallets()
     .generateWallet({
-      label: "nike poc - hot multisig wallet " + Math.floor(Date.now() / 1000),
+      label: "hot multisig wallet " + Math.floor(Date.now() / 1000),
       passphrase: "VerySecurePassword1234",
-      enterprise: "62aa5fcae1863700070421c04e1c2b3b",
+      enterprise: "yourEnterpriseIdHere",
     });
   console.log(JSON.stringify(newWallet, undefined, 2));
 }

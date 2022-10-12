@@ -7,7 +7,7 @@ const endpoints = {
     clientConstants: '/api/v1/client/constants',
     tbtcKey: '/api/v2/tbtc/key',
 }
-const secretAccessToken = 'v2x950a3bff3c67a741e8323fac6c28fa2b22b8625e991e96c03dd3e168818254fe';
+const secretAccessToken = 'replaceWithYours';
 
 app.all('*', function(req, res, next) {
     console.log(req)
